@@ -26,7 +26,7 @@ $apparel = query("SELECT * FROM apparel WHERE id = $id")[0];
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body bgcolor="lightgrey">
   <div class="container">
     <div class="Foto">
       <center><img width="200" src="../assets/img/<?= $apparel["foto"]; ?>" alt=""></center>

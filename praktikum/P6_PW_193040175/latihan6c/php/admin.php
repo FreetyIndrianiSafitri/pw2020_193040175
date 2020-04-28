@@ -17,13 +17,16 @@ $apparel = query("SELECT * FROM apparel");
 </head>
 
 <body bgcolor="salmon">
+  <div>
+    <a href="tambah.php"><button>Tambah Data</button></a>
+  </div>
   <table border="1" cellpadding="13" cellspacing="0" bgcolor="lightgrey">
     <tr bgcolor="pink">
       <th>#</th>
       <th>opsi</th>
       <th>Foto</th>
       <th>Nama Barang</th>
-      <th>Kantor Pusat</th>
+      <th>Stok Tersedia</th>
       <th>Warna</th>
       <th>Harga</th>
       <th>Merk</th>
@@ -34,8 +37,8 @@ $apparel = query("SELECT * FROM apparel");
       <tr>
         <td><?= $i; ?></td>
         <td>
-          <a href=""><button>Ubah</button></a>
-          <a href=""><button>Hapus</button></a>
+          <a href="ubah.php?id=<?= $app['id']; ?>"><button>Ubah</button></a>
+          <a href="hapus.php?id=<?= $app['id']; ?>" onclick="return confirm('Hapus Data?')"><button>Hapus</button></a>
         </td>
         <td><img src="../assets/img/<?= $app["foto"]; ?>" width="200px"></td>
         <td><?= $app["nama_barang"]; ?></td>
@@ -43,7 +46,7 @@ $apparel = query("SELECT * FROM apparel");
         <td><?= $app["warna"]; ?></td>
         <td><?= $app["harga"]; ?></td>
         <td><?= $app["merk"]; ?></td>
-        <td><?= $app["logo_merk"]; ?></td>
+        <td><img src="../assets/logo/<?= $app["logo_merk"]; ?>" width="200px"></td>
       </tr>
       <?php $i++; ?>
     <?php endforeach; ?>
