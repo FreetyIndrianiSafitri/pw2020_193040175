@@ -3,7 +3,7 @@
 //mengecek apakah ada id yang dikirimkan
 //jika tidak maka akan dikembalikan ke halaman index.php
 if (!isset($_GET['id'])) {
-  header("location:../indexx.php");
+  header("location: login.php");
   exit;
 }
 

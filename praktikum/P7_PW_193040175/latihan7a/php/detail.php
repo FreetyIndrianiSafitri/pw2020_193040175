@@ -3,7 +3,7 @@
 //mengecek apakah ada id yang dikirimkan
 //jika tidak maka akan dikembalikan ke halaman index.php
 if (!isset($_GET['id'])) {
-  header("location:../indexx.php");
+  header("location: login.php");
   exit;
 }
 
@@ -21,13 +21,13 @@ $apparel = query("SELECT * FROM apparel WHERE id = $id")[0];
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="style.css">
+  <title>Detail Pakaian</title>
 </head>
 
-<body style="background-color: lightgray;">
+<body style="background-color: lavender;">
   <div class="container">
     <div class="Foto">
       <center><img width="200" src="../assets/img/<?= $apparel["foto"]; ?>" alt=""></center>
@@ -98,8 +98,10 @@ $apparel = query("SELECT * FROM apparel WHERE id = $id")[0];
       </table>
     </div>
 
-    <center><button class="tombol-kembali"><a class="waves-effect blue darken-4 btn" href="../indexx.php">Kembali</a></button></center>
+    <center><button class="tombol-kembali"><a href="../indexx.php" class="waves-effect waves-light btn">Kembali</a></button></center>
   </div>
+
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>

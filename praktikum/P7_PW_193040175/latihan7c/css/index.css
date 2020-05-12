@@ -1,0 +1,23 @@
+
+
+body{
+    font-family: cursive;
+    background-color: salmon;
+    
+}
+img{
+width : 200px;
+            height : 250px;
+            border: 2px solid skyblue;
+            box-shadow: 7px 7px 7px 7px rgba(0,0,0,0.4);
+            
+        }
+        table{
+            margin:auto;
+
+        }
+        tr{
+            font-size: 20px;
+
+
+        }

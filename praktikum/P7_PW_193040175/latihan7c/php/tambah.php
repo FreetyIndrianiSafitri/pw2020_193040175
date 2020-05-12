@@ -1,19 +1,15 @@
 <?php
 require 'functions.php';
 
-$id = $_GET['id'];
-$apparel = query("SELECT * FROM apparel WHERE id = '$id'")[0];
-
-
-if (isset($_POST['ubah'])) {
-  if (ubah($_POST) > 0) {
+if (isset($_POST['tambah'])) {
+  if (tambah($_POST) > 0) {
     echo "<script>
-            alert('Data Berhasil Diubah!');
+            alert('Data Berhasil Ditambahkan!');
             document.location.href = 'admin.php';
           </script>";
   } else {
     echo "<script>
-            alert ('Data Gagal Diubah!');
+            alert ('Data Gagal Ditambahkan!');
             document.location.href = 'admin.php';
           </script>";
   }
@@ -33,11 +29,9 @@ if (isset($_POST['ubah'])) {
   <title>Document</title>
 </head>
 
-<body style="background-color: lightcyan;">
+<body style="background-color: lightgray;">
   <div class="container grey lighten-3">
-    <center>
-      <h3>Form Ubah Data Apparel</h3>
-    </center>
+      <h3 style="text-align: center;">Form Tambah Data Apparel</h3>
     <div class="row">
       <form action="" method="POST">
         <div class="row">
@@ -49,7 +43,7 @@ if (isset($_POST['ubah'])) {
           <div class="row">
             <div class="input-field col s6 offset-s3">
               <label for="foto">Foto :</label><br>
-              <input type="text" name="foto" Id="foto" required value="<?= $apparel['foto']; ?>">
+              <input type="text" name="foto" required>
             </div>
           </div>
         </li>
@@ -57,7 +51,7 @@ if (isset($_POST['ubah'])) {
           <div class="row">
             <div class="input-field col s6 offset-s3">
               <label for="nama_barang">Nama Barang :</label><br>
-              <input type="text" name="nama_barang" Id="nama_barang" required value="<?= $apparel['nama_barang']; ?>">
+              <input type="text" name="nama_barang" required>
             </div>
           </div>
         </li>
@@ -65,7 +59,7 @@ if (isset($_POST['ubah'])) {
           <div class="row">
             <div class="input-field col s6 offset-s3">
               <label for="stok_tersedia">Stok tersedia :</label><br>
-              <input type="text" name="stok_tersedia" Id="stok_tersedia" required value="<?= $apparel['stok_tersedia']; ?>">
+              <input type="text" name="stok_tersedia" required>
             </div>
           </div>
         </li>
@@ -73,7 +67,7 @@ if (isset($_POST['ubah'])) {
           <div class="row">
             <div class="input-field col s6 offset-s3">
               <label for="warna">Warna :</label><br>
-              <input type="text" name="warna" Id="warna" required value="<?= $apparel['warna']; ?>">
+              <input type="text" name="warna" required>
             </div>
           </div>
         </li>
@@ -81,7 +75,7 @@ if (isset($_POST['ubah'])) {
           <div class="row">
             <div class="input-field col s6 offset-s3">
               <label for="harga">Harga :</label><br>
-              <input type="text" name="harga" Id="harga" required value="<?= $apparel['harga']; ?>">
+              <input type="text" name="harga" required>
             </div>
           </div>
         </li>
@@ -89,20 +83,20 @@ if (isset($_POST['ubah'])) {
           <div class="row">
             <div class="input-field col s6 offset-s3">
               <label for="merk">Merk :</label><br>
-              <input type="text" name="merk" Id="merk" required value="<?= $apparel['merk']; ?>">
+              <input type="text" name="merk" required>
             </div>
           </div>
         </li>
         <li>
           <div class="row">
             <div class="input-field col s6 offset-s3">
-              <label for="logo_merk">Logo_Merk :</label><br>
-              <input type="text" name="logo_merk" Id="logo_merk" required value="<?= $apparel['logo_merk']; ?>">
+              <label for="logo_merk">Logo Merk :</label><br>
+              <input type="text" name="logo_merk" required>
             </div>
           </div>
         </li>
         <br>
-        <center><button class="waves-effect green darken-3 btn" type="submit" name="ubah">Ubah Data</button></center>
+        <center><button class="waves-effect green darken-3 btn" type="submit" name="tambah">Tambah Data</button></center>
         <center><a class="waves-effect blue darken-4 btn" href="admin.php">Kembali</a></center>
       </form>
     </div>
